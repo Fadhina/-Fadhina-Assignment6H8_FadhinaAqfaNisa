@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa; /* Sedikit lebih gelap */
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  width: 100%; /* Membuat lebar input fleksibel */
+  max-width: 300px; /* Maksimal lebar input 300px */
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Menambahkan transisi hover yang lebih halus */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 auto; /* Mengatur margin agar tengah */
+  max-width: 1200px; /* Membatasi lebar maksimal grid */
+}
+
+.movie {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Menambahkan transisi ketika hover */
+}
+
+.movie:hover {
+  transform: scale(1.05); /* Menambahkan efek hover */
+}
+
+.movie img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* Media queries untuk ukuran layar lebih besar */
+@media (min-width: 1200px) {
+  .movies {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom untuk layar besar */
+  }
+}
+
+/* Media queries untuk ukuran layar menengah */
+@media (max-width: 1024px) {
+  .movies {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk tablet */
+  }
+}
+
+/* Media queries untuk ukuran layar kecil */
+@media (max-width: 768px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile */
+  }
+
+  input {
+    width: 80%; /* Lebar input lebih besar pada layar kecil */
+  }
+}
+
+/* Media queries untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .movies {
+    grid-template-columns: 1fr; /* 1 kolom untuk layar kecil sekali */
+  }
+}
